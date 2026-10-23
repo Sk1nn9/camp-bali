@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://camp-abudabi.tennis-go-school.ru//sitemap.xml
