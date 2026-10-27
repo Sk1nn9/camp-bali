@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="google-site-verification" content="G_MeOQyNOx8FWdpT9Xmo6DCHAIFPyhpo-uOCzJUPM8I" />
     <meta name="yandex-verification" content="6312bf27b170b261" />
 
@@ -60,6 +61,21 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
+
+    <!-- Yandex.Metrika: вставить номер счётчика в window.YM_ID -->
+    <script>
+        window.YM_ID = 0; // TODO: номер счётчика Метрики
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        if (window.YM_ID) {
+            ym(window.YM_ID, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+        }
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/XXXXXXXX" style="position:absolute; left:-9999px;" alt=""></div></noscript>
 </head>
 
 <body>
@@ -71,7 +87,7 @@
                 <span class="nav__phone">
                     <img src="img/phone.svg" alt="Телефон теннисного клуба" class="nav__phone-icon">
                     <div class="nav__phone-container">
-                        <a href="tel:+79685761549" class="nav__phone-number">+7 968 576 1549</a>
+                        <a href="tel:+79111632444" class="nav__phone-number">+7 911 163 24 44</a>
                         <a href="tel:+79162990899" class="nav__phone-number">+7 916 299 0899</a>
                     </div>
                 </span>
@@ -112,7 +128,7 @@
                 <a href="tel:+79111632444" class="menu-socials__icon"><img
                         src="https://static.tildacdn.com/tild3438-3330-4761-a231-336435643837/Frame_2087325282.svg"
                         alt="Phone"></a>
-                <a href="https://t.me/TennisGoSokolniki" class="menu-socials__icon"><img
+                <a href="https://t.me/masha94_fedorova" class="menu-socials__icon"><img
                         src="https://static.tildacdn.com/tild3961-6163-4232-a130-333764323666/Frame_2087325283.svg"
                         alt="Telegram"></a>
                 <a href="https://api.whatsapp.com/send/?phone=79685761549&text&type=phone_number&app_absent=0"
@@ -602,29 +618,37 @@
         <h2 class="footer__title">Ты уже представил себя На бали, осталось только забронировать место</h2>
         <div class="footer__body">
             <div class="footer__left-block">
-                <a class="footer__link" href="https://spb.tennis-go-school.ru/tennis">Теннис</a>
-                <a class="footer__link" href="https://spb.tennis-go-school.ru/camp">кэмпы</a>
-                <a class="footer__link" href="https://spb.tennis-go-school.ru/korty">локации</a>
+                <a class="footer__link" href="https://tennis-go-school.ru/tennis">Теннис</a>
+                <a class="footer__link" href="https://tennis-go-school.ru/camp">кэмпы</a>
+                <a class="footer__link" href="https://tennis-go-school.ru/korty">локации</a>
             </div>
             <div class="footer__right-block">
-                <a class="footer__link" href="">ип</a>
+                <span class="footer__link footer__link--static">ИП Тютюнников Андрей Владиславович</span>
                 <a class="footer__link"
-                    href="https://spb.tennis-go-school.ru/polzovatelskoe-soglashenie">пользовательское соглашение</a>
-                <a class="footer__link" href="https://spb.tennis-go-school.ru/privacy">обработка данных</a>
-                <a class="footer__link" href="https://spb.tennis-go-school.ru/dogovor-publichnoj-oferty">публичная
+                    href="https://tennis-go-school.ru/polzovatelskoe-soglashenie">пользовательское соглашение</a>
+                <a class="footer__link" href="https://tennis-go-school.ru/privacy">обработка данных</a>
+                <a class="footer__link" href="https://tennis-go-school.ru/dogovor-publichnoj-oferty">публичная
                     оферта</a>
             </div>
 
         </div>
         <div class="footer__socials">
             <a href="tel:+79111632444" class="footer__socials-icon"><img src="img/links/phone.svg" alt="Phone"></a>
-            <a href="https://t.me/TennisGoSokolniki" class="footer__socials-icon"><img src="img/links/tg.svg"
+            <a href="https://t.me/masha94_fedorova" class="footer__socials-icon"><img src="img/links/tg.svg"
                     alt="Telegram"></a>
             <a href="https://api.whatsapp.com/send/?phone=79685761549&text&type=phone_number&app_absent=0"
                 class="footer__socials-icon"><img src="img/links/wa.svg" alt="WhatsApp"></a>
 
         </div>
     </footer>
+
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Уведомление об использовании cookie" hidden>
+        <button type="button" class="cookie-banner__close" id="cookieClose" aria-label="Закрыть">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <p class="cookie-banner__text">Сайт использует cookie-файлы, и передает данные службе веб-аналитики Яндекс Метрика. Оставаясь на сайте, вы соглашаетесь с <a href="https://tennis-go-school.ru/polzovatelskoe-soglashenie" target="_blank" rel="noreferrer">Пользовательским соглашением</a> и <a href="https://tennis-go-school.ru/privacy" target="_blank" rel="noreferrer">Политикой обработки персональных данных</a>.</p>
+        <button type="button" class="cookie-banner__btn" id="cookieAccept">Принимаю</button>
+    </div>
     <script src="script.js"></script>
 </body>
 

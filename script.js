@@ -233,6 +233,7 @@ const formCloseButton = formModal?.querySelector(".modal__close");
 
 const openForm = () => {
   if (!formModal) return;
+  ymGoal("form_open");
   formModal.classList.add("is-open");
   formModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("form-is-open");
@@ -298,9 +299,10 @@ document.getElementById("form").addEventListener("submit", async function (e) {
 
     showFormStatus("success", {
       title: "Заявка отправлена!",
-      text: "Спасибо! Мы свяжемся с вами в ближайшее время, чтобы обсудить детали бронирования кэмпа в Абу-Даби.",
+      text: "Спасибо! Мы свяжемся с вами в ближайшее время, чтобы обсудить детали бронирования кэмпа на Бали.",
     });
     form.reset();
+    ymGoal("lead_form_sent");
   } catch (error) {
     console.error("Ошибка отправки:", error);
     showFormStatus("error", {
@@ -772,3 +774,25 @@ document.addEventListener("click", (e) => {
         });
     }
 });
+
+/* ===== Яндекс.Метрика: цели ===== */
+function ymGoal(name) {
+  if (window.YM_ID && typeof ym === "function") ym(window.YM_ID, "reachGoal", name);
+}
+
+/* ===== Плашка cookie ===== */
+(() => {
+  const banner = document.getElementById("cookieBanner");
+  const btn = document.getElementById("cookieAccept");
+  const closeBtn = document.getElementById("cookieClose");
+  if (!banner || !btn) return;
+  let accepted = false;
+  try { accepted = localStorage.getItem("cookieAccepted") === "1"; } catch (e) {}
+  if (!accepted) banner.hidden = false;
+  btn.addEventListener("click", () => {
+    banner.hidden = true;
+    try { localStorage.setItem("cookieAccepted", "1"); } catch (e) {}
+  });
+  // крестик: скрывает до конца сессии, без запоминания согласия
+  closeBtn?.addEventListener("click", () => { banner.hidden = true; });
+})();
